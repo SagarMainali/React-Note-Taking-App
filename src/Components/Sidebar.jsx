@@ -39,10 +39,15 @@ function Sidebar(props) {
 
      return (
           <div className='sidebar flex flex-col'>
-               <i className="fa-solid fa-plus" onClick={() => toggleTheme()}></i>
-               {props.showTheme && <ul className='flex flex-col'>
-                    {colorTheme.map((color, index) => <li title={color} key={index} style={{ backgroundColor: color }} onClick={() => addNewNote(color)} ></li>)}
-               </ul>}
+               {!props.showTheme
+                    ? < i className="fa-solid fa-plus" onClick={() => toggleTheme()}></i>
+                    : <i className="fa-solid fa-minus" onClick={() => toggleTheme()}></i>
+               }
+               {
+                    props.showTheme && <ul className='flex flex-col'>
+                         {colorTheme.map((color, index) => <li title={color} key={index} style={{ backgroundColor: color }} onClick={() => addNewNote(color)} ></li>)}
+                    </ul>
+               }
           </div >
      )
 }
