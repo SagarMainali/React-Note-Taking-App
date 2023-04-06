@@ -15,7 +15,6 @@ function Sidebar(props) {
           temp.push(
                {
                     title: "note 6",
-                    lastModified: "5:00 am - 22 Dec, Saturday",
                     text: "this is my sixth note",
                     color
                }
@@ -30,7 +29,7 @@ function Sidebar(props) {
           //      prevState => prevState.push(
           //           {
           //                title: "note 6",
-          //                lastModified: "5:00 am - 22 Dec, Saturday",
+          //                date: "5:00 am - 22 Dec, Saturday",
           //                text: "this is my sixth note",
           //                color
           //           }
