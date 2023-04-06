@@ -8,21 +8,40 @@ function Sidebar(props) {
           props.setShowTheme(prevState => !prevState)
      }
 
-     function addNewNote() {
-          props.setNote(
-               prevState => prevState.push({
+     function addNewNote(color) {
+
+          const temp = [...props.note]
+
+          temp.push(
+               {
                     title: "note 6",
                     lastModified: "5:00 am - 22 Dec, Saturday",
-                    text: "this is my sixth note"
-               })
+                    text: "this is my sixth note",
+                    color
+               }
           )
+
+          props.setNote(temp)
+
+
+          // props.setNote(
+          //      prevState => prevState.push(
+          //           {
+          //                title: "note 6",
+          //                lastModified: "5:00 am - 22 Dec, Saturday",
+          //                text: "this is my sixth note",
+          //                color
+          //           }
+          //      )
+          // )
+
      }
 
      return (
           <div className='sidebar flex flex-col'>
                <i className="fa-solid fa-plus" onClick={() => toggleTheme()}></i>
                {props.showTheme && <ul className='flex flex-col'>
-                    {colorTheme.map((color, index) => <li title={color} key={index} style={{ backgroundColor: color }} onClick={() => addNewNote()} ></li>)}
+                    {colorTheme.map((color, index) => <li title={color} key={index} style={{ backgroundColor: color }} onClick={() => addNewNote(color)} ></li>)}
                </ul>}
           </div >
      )
