@@ -3,6 +3,7 @@
 * {
      margin: 0;
      box-sizing: border-box;
+     font-family: 'Roboto';
 }
 
 .flex {
@@ -13,16 +14,12 @@
      flex-direction: column;
 }
 
-body{
-     overflow-y: scroll;
-}
-
 /* ----------------------------------------- <App /> -------------------------------------------------- */
 
 .app {
-     padding: 40px;
+     padding: 20px;
      gap: 20px;
-     height: 100vh;
+     height: 96vh;
 }
 
 /* ----------------------------------------- <Sidebar /> -------------------------------------------------- */
@@ -68,10 +65,16 @@ li:hover {
 /* ----------------------------------------- <NotesContainer /> -------------------------------------------------- */
 
 .notes-container {
-     gap: 30px;
+     gap: 25px;
      flex-wrap: wrap;
      height: 100%;
+     padding-bottom: 20px;
      overflow-y: scroll;
+}
+
+h1{
+     font-size: 22px;
+     margin: 2px 0 20px 0;
 }
 
 .notes-container::-webkit-scrollbar{
@@ -85,7 +88,6 @@ li:hover {
 .notes-container::-webkit-scrollbar-thumb{
      border-radius: 20px;
      background-color: gray;
-     transition: 200ms;
 }
 
 /* ----------------------------------------- <Note /> -------------------------------------------------- */
@@ -108,15 +110,20 @@ li:hover {
      cursor: pointer;
      font-size: 15px;
      opacity: 0;
-     transition: 200ms;
+     transition: 300ms;
 }
 
 .note:hover .fa-trash {
      opacity: 1;
 }
 
+h2{
+     font-size: 20px;
+     font-weight: 600;
+}
+
 span {
-     font-size: 13px;
+     font-size: 10px;
      margin: 8px 0;
      font-style: italic;
 }
@@ -128,7 +135,8 @@ hr {
 }
 
 p{
-     text-indent: 20px;
+     font-family: 'Caveat';
+     font-size: 21px;
 }
 
 /* ------------------------------------------------------------------------------------------- */
