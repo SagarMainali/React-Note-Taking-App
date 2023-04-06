@@ -10,8 +10,8 @@ function App() {
 
      return (
           <div className="app flex">
-               <Sidebar note={note} setNote={setNote} showTheme={showTheme} setShowTheme={setShowTheme} />
-               <NotesContainer notesData={note} />
+               <Sidebar notes={note} setNote={setNote} showTheme={showTheme} setShowTheme={setShowTheme} />
+               <NotesContainer notes={note} />
           </div>
      )
 }

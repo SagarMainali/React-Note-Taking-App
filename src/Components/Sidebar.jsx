@@ -2,7 +2,7 @@ import React from 'react'
 
 function Sidebar(props) {
 
-     const colorTheme = ["#5b5ea6", "#ff6f61", "#6b5b95", "#009b77", "#d65076"]
+     const colorTheme = ["#4682B4", "#ff6f61", "#6b5b95", "#009b77", "#d65076"]
 
      function toggleTheme() {
           props.setShowTheme(prevState => !prevState)
@@ -10,7 +10,7 @@ function Sidebar(props) {
 
      function addNewNote(color) {
 
-          const temp = [...props.note]
+          const temp = [...props.notes]
 
           temp.push(
                {
@@ -20,6 +20,8 @@ function Sidebar(props) {
                     color
                }
           )
+
+          temp.reverse()
 
           props.setNote(temp)
 
