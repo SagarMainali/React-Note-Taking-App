@@ -13,11 +13,16 @@
      flex-direction: column;
 }
 
+body{
+     overflow-y: scroll;
+}
+
 /* ----------------------------------------- <App /> -------------------------------------------------- */
 
 .app {
      padding: 40px;
      gap: 20px;
+     height: 100vh;
 }
 
 /* ----------------------------------------- <Sidebar /> -------------------------------------------------- */
@@ -56,7 +61,7 @@ li {
      transition: 200ms;
 }
 
-li:hover{
+li:hover {
      scale: 1.1;
 }
 
@@ -65,6 +70,22 @@ li:hover{
 .notes-container {
      gap: 30px;
      flex-wrap: wrap;
+     height: 100%;
+     overflow-y: scroll;
+}
+
+.notes-container::-webkit-scrollbar{
+     width: 8px;
+}
+
+.notes-container::-webkit-scrollbar-track{
+     background-color: transparent;
+}
+
+.notes-container::-webkit-scrollbar-thumb{
+     border-radius: 20px;
+     background-color: gray;
+     transition: 200ms;
 }
 
 /* ----------------------------------------- <Note /> -------------------------------------------------- */
@@ -73,9 +94,10 @@ li:hover{
      padding: 20px;
      height: 300px;
      width: 300px;
-     background-color: antiquewhite;
+     background-color: #6b5b95;
      border-radius: 14px;
-     box-shadow: 0px 15px 10px -15px #111; 
+     box-shadow: 0px 15px 10px -15px #111;
+     color: white;
 }
 
 .title {
@@ -101,6 +123,12 @@ span {
 
 hr {
      margin-bottom: 8px;
+     border: 1px solid white;
+     border-radius: 8px;
+}
+
+p{
+     text-indent: 20px;
 }
 
 /* ------------------------------------------------------------------------------------------- */
