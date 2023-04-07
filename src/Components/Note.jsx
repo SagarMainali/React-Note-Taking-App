@@ -33,7 +33,7 @@ function Note(props) {
      }
 
      return (
-          <div className={"note flex flex-col " + `${props.newClass}`} style={{ backgroundColor: props.color }}>
+          <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
                     <h2>{props.title}</h2>
                     <i className="fa-solid fa-trash"></i>

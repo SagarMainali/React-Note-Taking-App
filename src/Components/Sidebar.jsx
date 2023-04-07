@@ -17,7 +17,6 @@ function Sidebar(props) {
                {
                     title: "note 6",
                     text: "this is my sixth note",
-                    newClass: "add-animation",
                     color
                }
           )
