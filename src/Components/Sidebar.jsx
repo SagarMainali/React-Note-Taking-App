@@ -12,19 +12,29 @@ function Sidebar(props) {
 
           const temp = [...props.notes]
 
-          temp.push(
+          // unshift adds element at index 0
+          temp.unshift(
                {
                     title: "note 6",
                     text: "this is my sixth note",
+                    newClass: "add-animation",
                     color
                }
           )
 
-          temp.reverse()
+          // splice adds or remove element at a given index
+          // temp.splice(0, 0, 
+          //      {
+          //           title: "note 6",
+          //           text: "this is my sixth note",
+          //           newClass: "add-animation",
+          //           color
+          //      }
+          // )
 
-          props.setNote(temp)
+          props.setNotes(temp)
 
-
+          //this doesn't seem to work, don't know why 
           // props.setNote(
           //      prevState => prevState.push(
           //           {
@@ -35,7 +45,6 @@ function Sidebar(props) {
           //           }
           //      )
           // )
-
      }
 
      return (

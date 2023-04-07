@@ -9,7 +9,10 @@ function Note(props) {
 
           const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
+          // day
           const day = days[d.getDay()]
+
+          // month
           const month = months[d.getMonth()]
 
           // hours
@@ -22,15 +25,15 @@ function Note(props) {
           let minutes = d.getMinutes()
           minutes = minutes < 10 ? "0" + minutes : minutes
 
+          // date
           const date = d.getDate()
 
           return `${hours}:${minutes} ${amPm}, ${month} ${date} - ${day}`
-
           // 9:37 PM, Jan 5 - Sunday
      }
 
      return (
-          <div className='note flex flex-col' style={{ backgroundColor: props.color }}>
+          <div className={"note flex flex-col " + `${props.newClass}`} style={{ backgroundColor: props.color }}>
                <div className="title flex">
                     <h2>{props.title}</h2>
                     <i className="fa-solid fa-trash"></i>
@@ -38,7 +41,7 @@ function Note(props) {
                <span>{currentDate()}</span>
                <hr />
                <p>{props.text}</p>
-          </div>
+          </div >
      )
 }
 

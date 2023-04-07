@@ -4,14 +4,14 @@ import NotesContainer from './NotesContainer'
 
 function App() {
 
-     const [note, setNote] = useState([])
+     const [notes, setNotes] = useState([])
 
      const [showTheme, setShowTheme] = useState(false)
 
      return (
           <div className="app flex">
-               <Sidebar notes={note} setNote={setNote} showTheme={showTheme} setShowTheme={setShowTheme} />
-               <NotesContainer notes={note} />
+               <Sidebar notes={notes} setNotes={setNotes} showTheme={showTheme} setShowTheme={setShowTheme} />
+               <NotesContainer notes={notes} />
           </div>
      )
 }

@@ -72,6 +72,7 @@ li:hover {
 .notes-main-container {
      padding: 10px 0 20px 0;
      gap: 20px;
+     width: 100%;
 }
 
 .notes-container {
@@ -112,6 +113,21 @@ h1 {
      border-radius: 14px;
      box-shadow: 0px 15px 10px -15px #111;
      color: white;
+}
+
+.add-animation {
+     animation-name: example;
+     animation-duration: 200ms;
+}
+
+@keyframes example {
+     from {
+          scale: 1.1
+     }
+
+     to {
+          scale: 1
+     }
 }
 
 .title {
