@@ -2,7 +2,18 @@ import React from 'react'
 
 function Note(props) {
 
-     const [noteText, setNoteText] = React.useState('')
+     console.log(props.id)
+
+     // delete note
+     function deleteNote(myId) {
+          const temp = [...props.notes]
+
+          const matchedIndex = temp.findIndex((item) => myId === item.id)
+
+          temp.splice(matchedIndex, 1)
+
+          props.setNotes(temp)
+     }
 
      // generate date
      function currentTime(milliseconds) {
@@ -38,12 +49,12 @@ function Note(props) {
      return (
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
-                    <input placeholder='Title'></input>
-                    <i className="fa-solid fa-trash"></i>
+                    <input placeholder='Title' ></input>
+                    <i className="fa-solid fa-trash" onClick={() => deleteNote(props.id)}></i>
                </div>
                <span>{currentTime(props.time)}</span>
                <hr />
-               <textarea value={noteText} onChange={(event) => setNoteText(event.target.value)}> </textarea>
+               <textarea defaultValue="hello"></textarea>
           </div >
      )
 }

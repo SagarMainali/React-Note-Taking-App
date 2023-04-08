@@ -70,7 +70,7 @@ li:hover {
 /* ----------------------------------------- <NotesContainer /> -------------------------------------------------- */
 
 .notes-main-container {
-     padding: 10px 0 0 0;
+     padding: 15px 0 0 0;
      gap: 20px;
      width: 100%;
 }
@@ -156,7 +156,7 @@ input {
      background-color: transparent;
 }
 
-input::placeholder{
+input::placeholder {
      color: rgb(255, 255, 255, 0.6);
      letter-spacing: 2px;
      font-family: 'Caveat';

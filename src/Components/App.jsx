@@ -16,7 +16,7 @@ function App() {
      return (
           <div className="app flex">
                <Sidebar notes={notes} setNotes={setNotes} />
-               <NotesContainer notes={notes} />
+               <NotesContainer notes={notes} setNotes={setNotes} />
           </div>
      )
 }

@@ -4,7 +4,7 @@ import Note from './Note'
 function NotesContainer(props) {
 
      const notesComponents = props.notes.length
-          ? props.notes.map((item, index) => < Note key={index} {...item} />)
+          ? props.notes.map(item => < Note key={item.id} {...item} notes={props.notes} setNotes={props.setNotes} />)
           : <h2 style={{ fontFamily: 'Caveat', fontSize: "30px" }}>You haven't added any notes.</h2>
 
      return (
