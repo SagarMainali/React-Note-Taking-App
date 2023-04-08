@@ -40,7 +40,7 @@ function Note(props) {
                </div>
                <span>{currentDate()}</span>
                <hr />
-               <p>{props.text}</p>
+               <textarea>{props.text}</textarea>
           </div >
      )
 }
