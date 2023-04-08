@@ -17,9 +17,9 @@
 /* ----------------------------------------- <App /> -------------------------------------------------- */
 
 .app {
-     padding: 20px;
+     padding: 20px 20px 10px;
      gap: 20px;
-     height: 96vh;
+     height: 100vh;
 }
 
 /* ----------------------------------------- <Sidebar /> -------------------------------------------------- */
@@ -27,7 +27,7 @@
 .sidebar {
      flex-direction: column;
      gap: 10px;
-     padding: 10px 20px 0;
+     padding: 10px 20px;
      /* background-color: rgb(246, 173, 185); */
      background-image: linear-gradient(326deg, #db81b6 0%, #f59e96 74%);
      border-radius: 12px;
@@ -70,7 +70,7 @@ li:hover {
 /* ----------------------------------------- <NotesContainer /> -------------------------------------------------- */
 
 .notes-main-container {
-     padding: 10px 0 20px 0;
+     padding: 10px 0 0 0;
      gap: 20px;
      width: 100%;
 }
@@ -80,6 +80,7 @@ li:hover {
      flex-wrap: wrap;
      height: 100%;
      overflow-y: scroll;
+
 }
 
 h1 {
