@@ -1,16 +1,21 @@
-import { React, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from './Sidebar'
 import NotesContainer from './NotesContainer'
 
 function App() {
 
-     const [notes, setNotes] = useState([])
+     const [notes, setNotes] = useState(
+          JSON.parse(localStorage.getItem('savedNotesData')) || []
+     )
 
-     const [showTheme, setShowTheme] = useState(false)
+     useEffect(() => {
+          localStorage.setItem('savedNotesData', JSON.stringify(notes))
+     }, [notes]
+     )
 
      return (
           <div className="app flex">
-               <Sidebar notes={notes} setNotes={setNotes} showTheme={showTheme} setShowTheme={setShowTheme} />
+               <Sidebar notes={notes} setNotes={setNotes} />
                <NotesContainer notes={notes} />
           </div>
      )

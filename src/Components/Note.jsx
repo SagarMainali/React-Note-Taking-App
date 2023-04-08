@@ -2,6 +2,9 @@ import React from 'react'
 
 function Note(props) {
 
+     const [noteText, setNoteText] = React.useState('')
+
+     // generate date
      function currentDate() {
           const d = new Date()
 
@@ -40,7 +43,7 @@ function Note(props) {
                </div>
                <span>{currentDate()}</span>
                <hr />
-               <textarea>{props.text}</textarea>
+               <textarea value={noteText} onChange={(event) => setNoteText(event.target.value)}> </textarea>
           </div >
      )
 }

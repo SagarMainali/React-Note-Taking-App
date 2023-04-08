@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Sidebar(props) {
 
+     const [showTheme, setShowTheme] = useState(false)
+
      const colorTheme = ["#4682B4", "#ff6f61", "#6b5b95", "#009b77", "#d65076"]
 
+     // toggle state to show or hide colors
      function toggleTheme() {
-          props.setShowTheme(prevState => !prevState)
+          setShowTheme(prevState => !prevState)
      }
 
+     // add new note on click
      function addNewNote(color) {
 
           const temp = [...props.notes]
@@ -35,7 +39,7 @@ function Sidebar(props) {
 
           //this doesn't seem to work, don't know why 
           // props.setNote(
-          //      prevState => prevState.push(
+          //      prevState => prevState.unshift(
           //           {
           //                title: "note 6",
           //                date: "5:00 am - 22 Dec, Saturday",
@@ -48,12 +52,12 @@ function Sidebar(props) {
 
      return (
           <div className='sidebar flex flex-col'>
-               {!props.showTheme
+               {!showTheme
                     ? < i className="fa-solid fa-plus" onClick={() => toggleTheme()}></i>
                     : <i className="fa-solid fa-minus" onClick={() => toggleTheme()}></i>
                }
                {
-                    props.showTheme && <ul className='flex flex-col'>
+                    showTheme && <ul className='flex flex-col'>
                          {colorTheme.map((color, index) => <li title={color} key={index} style={{ backgroundColor: color }} onClick={() => addNewNote(color)} ></li>)}
                     </ul>
                }
