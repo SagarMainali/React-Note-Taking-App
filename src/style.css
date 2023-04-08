@@ -143,9 +143,23 @@ h1 {
      opacity: 1;
 }
 
-h2 {
-     font-size: 20px;
+input {
+     font-family: 'Roboto';
+     color: white;
+     font-size: 17px;
      font-weight: 600;
+     letter-spacing: .5px;
+     border: 0;
+     outline: 0;
+     width: 100%;
+     background-color: transparent;
+}
+
+input::placeholder{
+     color: rgb(255, 255, 255, 0.6);
+     letter-spacing: 2px;
+     font-family: 'Caveat';
+     font-size: 20px;
 }
 
 span {
@@ -162,13 +176,14 @@ hr {
 
 textarea {
      font-family: 'Caveat';
-     font-size: 20px;
+     font-size: 22px;
      resize: none;
      border: 0;
      outline: 0;
      flex: 1;
      background-color: transparent;
      color: white;
+     letter-spacing: .6px;
 }
 
 /* ------------------------------------------------------------------------------------------- */

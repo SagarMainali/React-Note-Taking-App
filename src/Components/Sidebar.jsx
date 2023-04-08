@@ -21,6 +21,7 @@ function Sidebar(props) {
                {
                     title: "note 6",
                     text: "this is my sixth note",
+                    time: Date.now(),
                     color
                }
           )

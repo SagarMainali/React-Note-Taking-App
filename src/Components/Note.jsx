@@ -5,8 +5,8 @@ function Note(props) {
      const [noteText, setNoteText] = React.useState('')
 
      // generate date
-     function currentDate() {
-          const d = new Date()
+     function currentTime(milliseconds) {
+          const d = new Date(milliseconds)
 
           const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -38,10 +38,10 @@ function Note(props) {
      return (
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
-                    <h2>{props.title}</h2>
+                    <input placeholder='Title'></input>
                     <i className="fa-solid fa-trash"></i>
                </div>
-               <span>{currentDate()}</span>
+               <span>{currentTime(props.time)}</span>
                <hr />
                <textarea value={noteText} onChange={(event) => setNoteText(event.target.value)}> </textarea>
           </div >
