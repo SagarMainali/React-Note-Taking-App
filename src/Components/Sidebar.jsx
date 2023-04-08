@@ -19,7 +19,7 @@ function Sidebar(props) {
           // unshift adds element at index 0
           temp.unshift(
                {
-                    id: temp.length + 1,
+                    id: Date.now(),
                     time: Date.now(),
                     color
                }

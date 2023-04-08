@@ -2,8 +2,6 @@ import React from 'react'
 
 function Note(props) {
 
-     console.log(props.id)
-
      // delete note
      function deleteNote(myId) {
           const temp = [...props.notes]
