@@ -36,12 +36,12 @@ function Note(props) {
      return (
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
-                    <input placeholder='Title' ></input>
-                    <i className="fa-solid fa-trash" onClick={() => props.deleteNote(props.id)}></i>
+                    <input placeholder='Title' name='title' onChange={(event) => props.handleChange(event, props.id)} value={props.title} ></input>
+                    <i className="fa-solid fa-trash" onClick={() => props.deleteNote(props.id)} ></i>
                </div>
                <span>{currentTime(props.time)}</span>
                <hr />
-               <textarea defaultValue="hello"></textarea>
+               <textarea name='text' onChange={(event) => props.handleChange(event, props.id)} value={props.text} ></textarea>
           </div >
      )
 }
