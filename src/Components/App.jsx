@@ -4,6 +4,7 @@ import NotesContainer from './NotesContainer'
 
 function App() {
 
+
      // main state - store notes as objects
      const [notes, setNotes] = useState(
           JSON.parse(localStorage.getItem('savedNotesData')) || []
@@ -24,6 +25,8 @@ function App() {
           temp.unshift(
                {
                     id: Date.now(),
+                    title: '',
+                    text: '',
                     time: Date.now(),
                     color
                }
@@ -58,9 +61,30 @@ function App() {
      function deleteNote(myId) {
           const temp = [...notes]
 
-          const matchedIndex = temp.findIndex((item) => myId === item.id)
+          const matchedIndex = temp.findIndex(item => myId === item.id)
 
           temp.splice(matchedIndex, 1)
+
+          setNotes(temp)
+     }
+
+     // handling changes of input
+     function handleChange(event, myId) {
+
+          // destructure and only get required properties
+          const { name, value } = event.target
+
+          const temp = [...notes]
+
+          const matchedIndex = temp.findIndex(item => myId === item.id)
+
+          // because temp[matchedIndex].[name] doesn't work
+          if (name === 'title') {
+               temp[matchedIndex].title = value
+          }
+          else {
+               temp[matchedIndex].text = value
+          }
 
           setNotes(temp)
      }
@@ -68,7 +92,7 @@ function App() {
      return (
           <div className="app flex">
                <Sidebar addNewNote={addNewNote} />
-               <NotesContainer notes={notes} deleteNote={deleteNote} />
+               <NotesContainer notes={notes} deleteNote={deleteNote} handleChange={handleChange} />
           </div>
      )
 }
