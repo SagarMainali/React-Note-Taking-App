@@ -9,6 +9,7 @@ function App() {
           JSON.parse(localStorage.getItem('savedNotesData')) || []
      )
 
+     // run this function only when there is any changes in notes
      useEffect(() => {
           localStorage.setItem('savedNotesData', JSON.stringify(notes))
      }, [notes]
