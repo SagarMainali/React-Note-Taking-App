@@ -4,6 +4,7 @@ import NotesContainer from './NotesContainer'
 
 function App() {
 
+     // main state - store notes as objects
      const [notes, setNotes] = useState(
           JSON.parse(localStorage.getItem('savedNotesData')) || []
      )
