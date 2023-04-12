@@ -43,12 +43,12 @@ function Note(props) {
           }
      }
 
-     const betterFunction = debounce(props.handleChange, 1000)
+     const debouncedFunction = debounce(props.handleChange, 1000)
 
      return (
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
-                    <input placeholder='Title' name='title' onChange={(event) => betterFunction(event, props.id)} defaultValue={props.title} ></input>
+                    <input placeholder='Title' name='title' onChange={(event) => debouncedFunction(event, props.id)} defaultValue={props.title} ></input>
                     {/* if 'value' is used instead of 'defaultValue', user won't be able to type because the input value is set to props.title which takes 1000ms 
                     to update since its state is being handled by react itself making it controlled state... so whats happening is that when user gives input,
                     the funcion waits 1000ms before updating props.title with the user input... but since the function is triggered right after user presses
@@ -59,7 +59,7 @@ function Note(props) {
                </div>
                <span>{currentTime(props.time)}</span>
                <hr />
-               <textarea name='text' onChange={(event) => betterFunction(event, props.id)} defaultValue={props.text} ></textarea>
+               <textarea name='text' onChange={(event) => debouncedFunction(event, props.id)} defaultValue={props.text} ></textarea>
           </div >
      )
 }
