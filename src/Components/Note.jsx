@@ -49,6 +49,12 @@ function Note(props) {
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
                     <input placeholder='Title' name='title' onChange={(event) => betterFunction(event, props.id)} defaultValue={props.title} ></input>
+                    {/* if 'value' is used instead of 'defaultValue', user won't be able to type because the input value is set to props.title which takes 1000ms 
+                    to update since its state is being handled by react itself making it controlled state... so whats happening is that when user gives input,
+                    the funcion waits 1000ms before updating props.title with the user input... but since the function is triggered right after user presses
+                    a key and the current value of input is null when the function is triggered, props.title receives null since the value it reads at the time 
+                    of function call has not been updated yet with the value that user typed...so everytime it receives null and updates the value of props.title 
+                    with null which then gets updated as the input value*/}
                     <i className="fa-solid fa-trash" onClick={() => props.deleteNote(props.id)} ></i>
                </div>
                <span>{currentTime(props.time)}</span>
