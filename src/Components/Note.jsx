@@ -46,4 +46,9 @@ function Note(props) {
      )
 }
 
+// every letter we type on the input field will render the app component, and the input field is being updated with what we type the next time it renders
+// with the letter we typed
+// problem statement - render the app after 500ms ony when the user stops typing by using debounce but since the value is also being updated after the app 
+// is rendered, the letter user types will also be rendered after 500ms 
+
 export default Note
