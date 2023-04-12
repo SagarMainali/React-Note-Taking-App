@@ -33,22 +33,29 @@ function Note(props) {
           // 9:37 PM, Jan 5 - Sunday
      }
 
+     function debounce(callback, delay) {
+          let timer
+          return function (...args) {
+               clearTimeout(timer)
+               timer = setTimeout(() => {
+                    callback(...args)
+               }, delay)
+          }
+     }
+
+     const betterFunction = debounce(props.handleChange, 1000)
+
      return (
           <div className="note flex flex-col" style={{ backgroundColor: props.color }}>
                <div className="title flex">
-                    <input placeholder='Title' name='title' onChange={(event) => props.handleChange(event, props.id)} value={props.title} ></input>
+                    <input placeholder='Title' name='title' onChange={(event) => betterFunction(event, props.id)} defaultValue={props.title} ></input>
                     <i className="fa-solid fa-trash" onClick={() => props.deleteNote(props.id)} ></i>
                </div>
                <span>{currentTime(props.time)}</span>
                <hr />
-               <textarea name='text' onChange={(event) => props.handleChange(event, props.id)} value={props.text} ></textarea>
+               <textarea name='text' onChange={(event) => betterFunction(event, props.id)} defaultValue={props.text} ></textarea>
           </div >
      )
 }
-
-// every letter we type on the input field will render the app component, and the input field is being updated with what we type the next time it renders
-// with the letter we typed
-// problem statement - render the app after 500ms ony when the user stops typing by using debounce but since the value is also being updated after the app 
-// is rendered, the letter user types will also be rendered after 500ms 
 
 export default Note
