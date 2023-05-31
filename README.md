@@ -1,1 +1,1 @@
-# React-Note-Taking-App
+## Note taking app made using react.js
